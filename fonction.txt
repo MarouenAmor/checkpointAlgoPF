@@ -1,0 +1,32 @@
+
+FUNCTION dot_produc(v1,v2:ARRAY_OF FLOAT) : FLOAT
+VAR
+i:INTEGER;
+res:FLOAT;
+BEGIN
+res:=0;
+FOR i FROM 0 TO v1.length-1 STEP 1  DO
+res:=res+(v1[i]*v2[i]);
+    RETURN res ;
+END
+ALGORITHM dot_product
+VAR
+v1,v2:ARRAY_OF FLOAT[2];
+ps:FLOAT;
+i:INTEGER;
+BEGIN
+read(n);
+ps:=0;
+FOR i FROM 0 TO n-1 STEP 1  DO
+FOR i FROM 0 TO v1.length STEP 1  DO
+read(v1[i]);
+read(v2[i]);
+END_FOR
+ps:=dot_produc(v1,v2);
+IF (ps==0) THEN
+write(" the two vectors are orthogonal");
+ELSE
+write (" the two vectors are not orthogonal")
+END_IF
+END_FOR
+END
